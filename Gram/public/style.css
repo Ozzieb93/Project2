@@ -1,0 +1,8 @@
+footer {
+   position:absolute;
+   border: solid 3px red;
+}
+
+html {
+  background-color: red;
+}
