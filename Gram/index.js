@@ -2,18 +2,21 @@ const express         = require('express');
 const app             = express();
 const port            = process.env.PORT || 3000;
 const expressLayouts  = require('express-ejs-layouts');
-const router          = require('router');
-const mongoose = require('mongoose');
+const routes        = require('./config/routes');
+const mongoose        = require('mongoose');
+// const {port, databaseURI} = require('./config/environment');
+
+mongoose.Promise      = require('bluebird');
 
 
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://localhost/user-app');
+mongoose.connect('mongodb://localhost/user');
 
 app.use(express.static(`${__dirname}/public`));
 app.use(expressLayouts);
-app.use(router);
+app.use(routes);
 
 
 
