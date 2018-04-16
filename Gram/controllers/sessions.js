@@ -11,7 +11,7 @@ function createRoute(req, res) { // This is creating a new session.
       // console.log(user);
       if(!user || !user.validatePassword(req.body.password)){
         console.log('not signed in');
-        return res.badRequest('signin', 'Wrong credentials');
+        return res.redirect('/error');
       }
       req.session.userId = user.id;
       // console.log(req.session);

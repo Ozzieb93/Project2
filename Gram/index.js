@@ -9,6 +9,7 @@ const flash           = require('flash');
 const User            = require('./models/user');
 const session         = require('express-session');
 const morgan          = require('morgan');
+const customResponses = require('./lib/customResponses');
 // const {port, databaseURI} = require('./config/environment');
 
 mongoose.Promise      = require('bluebird');
@@ -33,6 +34,8 @@ app.use(session({
 }));
 
 app.use(flash());
+app.use(customResponses);
+
 
 app.use((req, res, next) =>{
   if(!req.session.userId) return next();
@@ -54,6 +57,7 @@ app.use(routes);
 
 
 app.get('/', (req, res) => res.render('pages/home'));
+app.get('/error', (req, res) => res.render('pages/error'));
 app.get('/login', (req, res) => res.render('auth/login'));
 // app.get('/photos', (req, res) => res.render({ photos }));
 
