@@ -7,6 +7,10 @@
         <a class="grey-text centre" href="/login">Login</a>
         <a class="grey-text centre" href="/register">Register</a>
         <a class="grey-text centre" href="/">Home</a>
+
+        <% } %>
+        <% if(locals.isAuthenticated) { %>
+          <a href="/logout">Logout</a>
         <% } %>
     </div>
   </footer>
