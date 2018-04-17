@@ -1,6 +1,6 @@
 const express         = require('express');
 const app             = express();
-const port            = process.env.PORT || 3000;
+const {databaseURI, port }            = require('./config/environment');
 const expressLayouts  = require('express-ejs-layouts');
 const routes          = require('./config/routes');
 const mongoose        = require('mongoose');
@@ -18,7 +18,7 @@ mongoose.Promise      = require('bluebird');
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://localhost/user');
+mongoose.connect(databaseURI);
 app.use(express.static(`${__dirname}/public`));
 
 app.use(morgan('dev'));
@@ -56,9 +56,9 @@ app.use((req, res, next) =>{
 app.use(routes);
 
 
-app.get('/', (req, res) => res.render('pages/home'));
-app.get('/error', (req, res) => res.render('pages/error'));
-app.get('/login', (req, res) => res.render('auth/login'));
+// app.get('/', (req, res) => res.render('pages/home'));
+// app.get('/error', (req, res) => res.render('pages/error'));
+// app.get('/login', (req, res) => res.render('auth/login'));
 // app.get('/photos', (req, res) => res.render({ photos }));
 
 app.listen(port, () => console.log(`Up running on port ${port} :)`));

@@ -21,15 +21,8 @@ function usersShow(req, res){
     .then(users => res.render('users/show', {users}));
 }
 
-
 //
 module.exports = {
   index: usersIndex,
   show: usersShow
-
-//   delete: albumsDelete,
-//   new: albumsNew,
-//   create: albumsCreate,
-//   edit: albumsEdit,
-//   update: albumsUpdate
 };

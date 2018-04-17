@@ -2,6 +2,7 @@
   border-radius: 50%;
   width: 169px;
   height: 169px;
+  border: 1px solid red;
 }
 html {
     position: relative;

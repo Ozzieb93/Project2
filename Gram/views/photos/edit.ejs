@@ -1,0 +1,13 @@
+<div class="row">
+  <h2>Edit <%= album.name %></h2>
+  <form class="col l12" action="/photos/<%= photo._id %>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="input-field col l12">
+      <input type="text" name="edit" id="edit_feild" value="<%= photo.description %>">
+      <label for="edit-field">Edit description</label>
+    </div>
+    <div class="input-field col l12">
+      <button class="green btn">Save changes</button>
+    </div>
+  </form>
+</div>

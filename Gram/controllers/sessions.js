@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+
 function newRoute(req, res) {
   res.render('auth/login');
 }
@@ -15,8 +16,7 @@ function createRoute(req, res) { // This is creating a new session.
       }
       req.session.userId = user.id;
       // console.log(req.session);
-      res.redirect('/users');
-      console.log('user id is ' + user.id);
+      res.redirect(`/users/${user.id}`);
     });
 }
 
