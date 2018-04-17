@@ -17,6 +17,12 @@ User
   .then(console.log('created'))
   .catch(err => console.log(err))
   .finally(()=> mongoose.connection.close());
+
+// 
+// Photo
+//   .create({
+//
+//   })
 //
 // Photo
 // .create([{

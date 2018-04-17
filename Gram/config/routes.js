@@ -13,13 +13,9 @@ router.get('/', (req, res) => res.render('pages/home'));
 
 router.route('/users')
   .get(users.index);
-
-router.route('/users/:id');  
-
-// router.route('/users/:id')
-//   .get(users.show)
-//   .delete(users.delete)
-//   .put(users.update);
+// //
+router.route('/users/:id')
+  .get(users.show);
 
 // Authentication begin
 

@@ -13,12 +13,20 @@ function usersIndex(req, res){
   // There is no .finally() here, because the connection to node.js is always open
 }
 
+function usersShow(req, res){
+  User
+    .findById(req.params.id) // This is only usable because we have the body-parser
+    // .populate('photos')
+    .exec()
+    .then(users => res.render('users/show', {users}));
+}
 
 
 //
 module.exports = {
-  index: usersIndex
-//   show: albumsShow,
+  index: usersIndex,
+  show: usersShow
+
 //   delete: albumsDelete,
 //   new: albumsNew,
 //   create: albumsCreate,

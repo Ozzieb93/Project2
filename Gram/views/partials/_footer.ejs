@@ -10,7 +10,11 @@
 
         <% } %>
         <% if(locals.isLoggedIn) { %>
-          <a href="/logout">Logout</a>
+          <a href="/logout">Logout (Signed in as <%= locals.user.username %>) </a>
+        <% } %>
+
+        <% if(locals.isLoggedIn) { %>
+          <a href="/users">Users </a>
         <% } %>
     </div>
   </footer>

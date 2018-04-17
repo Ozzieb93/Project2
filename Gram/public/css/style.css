@@ -14,3 +14,8 @@ footer {
     width: 100%;
     padding-top: 10px;
 }
+.celebs {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
