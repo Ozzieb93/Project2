@@ -13,6 +13,8 @@ function usersIndex(req, res){
   // There is no .finally() here, because the connection to node.js is always open
 }
 
+
+
 //
 module.exports = {
   index: usersIndex

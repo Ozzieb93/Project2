@@ -1,18 +1,27 @@
 <div class="row">
 <h2>Register</h2>
   <form class="col l12" action="/register" method="post">
+
     <div class="input-field col l12">
       <input type="text" name="username" id="username_field">
       <label for="username_field">Username</label>
     </div>
+
     <div class="input-field col l12">
       <input type="email" name="email" id="email_field" required>
       <label for="email_field">Email</label>
     </div>
+
+    <div class="input-field col l12">
+      <input type="text" name="photo" id="photo_feild" required>
+      <label for="photo_feild">Upload Profile Picture</label>
+    </div>
+
     <div class="input-field col l12">
       <input type="password" name="password" id="password_field" required>
       <label for="password_field">Password</label>
     </div>
+
     <div class="input-field col l12">
       <input type="password" name="passwordConfirmation" id="password_field" required>
       <label for="password_field">Password Confirmation</label>
