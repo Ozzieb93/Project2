@@ -15,7 +15,7 @@ function createRoute(req, res) { // This is creating a new session.
       }
       req.session.userId = user.id;
       // console.log(req.session);
-      res.redirect('/');
+      res.redirect('/users');
       console.log('Signed in');
     });
 }

@@ -5,11 +5,11 @@ function newRoute(req, res) {
 }
 
 function createRoute(req, res){
-  console.log('Before the create function',req.body);
+  // console.log('Before the create function',req.body);
   User
     .create(req.body)
     .then(() => {
-      console.log('here in then function');
+      // console.log('here in then function');
       res.redirect('/');
     })
     .catch((err) => {
@@ -17,7 +17,7 @@ function createRoute(req, res){
         return res.badRequest('signup', err.toString());
       }
     });
-  console.log('After the create function',req.body);
+  // console.log('After the create function',req.body);
 }
 
 module.exports = {
