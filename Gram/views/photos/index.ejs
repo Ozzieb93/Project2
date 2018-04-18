@@ -1,7 +1,8 @@
-<h1>Photos</h1>
+<h1>Your Photos</h1>
 
 <% photos.forEach(photo => { %>
-     <p> <%= photo.title %>  </p>
-     <p> <%= photo.photo %>  </p>
-     <p> <%= photo.description %>  </p>
+     <p> Photo Title: <%= photo.title %>  </p>
+     <img src="<%= photo.photo %> " >
+     <p> Photo Description: <%= photo.description %>  </p>
+     <a href="photos/<%= photo.id %>"> Link </a>
    <% }) %>

@@ -15,24 +15,22 @@ function photosIndex(req, res){
 function photosShow(req, res){
   Photo
     .findById(req.params.id) // This is only usable because we have the body-parser
-    // .populate('user')
     .exec()
     .then(photos => res.render('photos/show', { photos }));
 }
 
 function photosNew(req, res) {
-  res.render('photos/new', {error: null});
+  res.render('photos/new');
 }
 
 function photosCreate(req, res) {
   //req.body.user = req.currentUser; //This could also be res.locals.user, which is defined also to be user in index.js
-  console.log(req.body + 'created'); // This logs the contents of the request
+  // This logs the contents of the request
   Photo
-  console.log('it reached here')
     .create(req.body) // Getting the entire object of the request
     .then(() => res.redirect('/photos')) // A promise is either fulfilled or not fulfilled. If it is not fulfilled, it will move onto .catch(). If it is fulfilled, it will move to the next .then()
     .catch((error) => { // Catches the validation error created in the album model (ratings is not between 1 and 5 or name is blank).
-      console.log(req.body);
+      console.log('in catch err--->',error);
       if(error.name === 'ValidationError') {
         return res.badRequest('/photos/new', error.toString()); // Must be returned because everything that happens after it will terminate.
       }
@@ -42,9 +40,9 @@ function photosCreate(req, res) {
 function photosEdit(req, res) {
   Photo
     .findById(req.params.id) // This is only usable because we have the body-parser
-    .populate('photos') // Why is this necessary here? We are not enabling the user to edit which photos are in the album.
+    // .populate('photos') // Why is this necessary here? We are not enabling the user to edit which photos are in the album.
     .exec()
-    .then(album => res.render('photos/edit', {album}));
+    .then(photo => res.render('photos/edit', { photo }));
 }
 
 function photosUpdate(req, res){
@@ -55,7 +53,7 @@ function photosUpdate(req, res){
       photo = Object.assign(photo, req.body); // This assigns the contents of req.body to album
       return photo.save();
     })
-    .then(photo => res.redirect(`/photo/${photo._id}`));
+    .then(photo => res.redirect(`/photo/${photo.id}`));
 }
 
 function photosDelete(req, res){

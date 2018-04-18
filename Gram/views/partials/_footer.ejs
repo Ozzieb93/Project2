@@ -21,5 +21,9 @@
           <a href="/photos/new">Upload New Photo</a>
         <% } %>
 
+        <% if(locals.isLoggedIn) { %>
+          <a href="/photos">Your Profile</a>
+        <% } %>
+
     </div>
   </footer>

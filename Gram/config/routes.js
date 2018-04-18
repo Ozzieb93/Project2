@@ -26,18 +26,19 @@ router.route('/photos')
   .post(photos.create);
 
 router.route('/photos/new')
-  .get(secureRoute, photos.new)
-  .post(photos.create);
+  .get(secureRoute, photos.new);
+
 
 router.route('/photos/:id')
   .get(photos.show)
   .delete(photos.delete)
   .put(photos.update);
 
-router.route('/albums/:id/edit')
+router.route('/photos/:id/edit')
   .get(photos.edit);
 
 // End Photos
+
 
 
 // Users - Show the Users
