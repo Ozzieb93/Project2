@@ -20,3 +20,10 @@ footer {
   display: flex;
   justify-content: center;
 }
+
+#home-prof-pic {
+  border: 3px solid red;
+  border-radius: 50%;
+  width: 169px;
+  height: 169px;
+}

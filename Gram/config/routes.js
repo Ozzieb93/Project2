@@ -5,6 +5,16 @@ const photos          = require('../controllers/photos');
 const registrations   = require('../controllers/registrations');
 const sessions        = require('../controllers/sessions');
 
+function secureRoute(req, res, next){
+  if(!req.session.userId){
+    return req.session.regenerate(() =>{
+      req.flash('danger', 'You must be logged in');
+      res.redirect('/');
+    });
+  }
+  return next();
+}
+
 
 
 router.get('/', (req, res) => res.render('pages/home'));
@@ -16,7 +26,7 @@ router.route('/photos')
   .post(photos.create);
 
 router.route('/photos/new')
-  .get(photos.new)
+  .get(secureRoute, photos.new)
   .post(photos.create);
 
 router.route('/photos/:id')
@@ -28,6 +38,7 @@ router.route('/albums/:id/edit')
   .get(photos.edit);
 
 // End Photos
+
 
 // Users - Show the Users
 

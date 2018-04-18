@@ -1,0 +1,29 @@
+<div class="row">
+  <h3 class="col l10"><%= album.name %></h3>
+  <div class="col l2">
+    <form action="/photos/<%= photo.id %>" method="post">
+      <input type = "hidden" name="_method" value = "DELETE">
+      <button class="btn red">Delete Album</button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <% album.photos.forEach(photo => { %>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="<%= photo.url %>">
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content">
+        </div>
+        <div class="card-action">
+          <form method="POST" action="/photos/<%= photo._id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="red btn">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
