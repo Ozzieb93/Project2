@@ -4,6 +4,7 @@ const Photo = require('../models/photo');
 function photosIndex(req, res){
   Photo
     .find()
+    .populate('user')
     .exec() // Everything before .exec() won't be executed until .exec()
     .then(photos => {
       console.log(photos);

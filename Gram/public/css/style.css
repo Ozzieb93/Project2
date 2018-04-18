@@ -10,9 +10,8 @@ html {
 }
 footer {
     position: absolute;
-    left: 0;
     bottom: 0;
-    width: 100%;
+    /* width: 100%; */
     padding-top: 10px;
 }
 .celebs {
@@ -22,8 +21,64 @@ footer {
 }
 
 #home-prof-pic {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   border-radius: 50%;
   width: 169px;
   height: 169px;
 }
+
+/* HOME PAGE */
+
+.main-page {
+  display: flex;
+  justify-content: center;
+
+}
+
+.home-photo {
+  /* border: 3px solid red; */
+  width: 100%;
+  height: 100%;
+  display:block;
+  margin:auto;
+
+}
+
+.home-login {
+  /* border: 3px solid red; */
+  width: 500px;
+  height: 500px;
+}
+
+
+ .instagram-home-photo {
+   max-width:100%;
+   max-height:100%;
+   align-items: center;
+}
+
+.login-img {
+  max-width:40%;
+  max-height:70%;
+}
+
+
+/* Footer */
+.page-footer {
+  width: 100%;
+}
+
+footer {
+  max-width: 100%;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+}
+
+.link-hover {
+  cursor: pointer;
+}
+
+/* Photos Feed */
