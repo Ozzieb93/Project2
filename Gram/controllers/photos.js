@@ -46,14 +46,16 @@ function photosEdit(req, res) {
 }
 
 function photosUpdate(req, res){
+  console.log('in photosUpdate');
   Photo
     .findById(req.params.id)
     .exec()
     .then(photo => {
       photo = Object.assign(photo, req.body); // This assigns the contents of req.body to album
+      console.log('inside update function----->',req.body);
       return photo.save();
     })
-    .then(photo => res.redirect(`/photo/${photo.id}`));
+    .then(photo => res.redirect('/photos'));
 }
 
 function photosDelete(req, res){
@@ -61,7 +63,7 @@ function photosDelete(req, res){
     .findById(req.params.id)
     .exec()
     .then(photo => photo.remove())
-    .then(() => res.redirect('/photo'));
+    .then(() => res.redirect('/photos'));
 }
 
 

@@ -2,7 +2,7 @@
 
 <% photos.forEach(photo => { %>
      <p> Photo Title: <%= photo.title %>  </p>
-     <img src="<%= photo.photo %> " >
+     <img src="<%= photo.photo %>" >
      <p> Photo Description: <%= photo.description %>  </p>
      <a href="photos/<%= photo.id %>"> Link </a>
    <% }) %>

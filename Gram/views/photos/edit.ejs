@@ -1,6 +1,8 @@
+
+
 <div class="row">
     <h2>Edit <%= photo.title %></h2>
-  <form class="col l12" action="/photos/<%= photo.id %>" method="post">
+  <form class="col l12" action="/photos/<%= photo._id %>" method="post">
     <input type="hidden" name="_method" value="PUT">
     <div class="input-field col l12">
       <input type="text" name="description" id="description_feild" value="<%= photo.description%>">

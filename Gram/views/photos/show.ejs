@@ -1,11 +1,15 @@
 <h1>hello</h1>
 
 <div class="main-photo">
+
 <a href="/photos/<%= photos._id %>/edit" class="orange-text">Edit Photo</a>
 
+
+<form action="/photos/<%= photos._id %>" method="post">
+    <input type = "hidden" name="_method" value = "DELETE">
+    <button class="btn red">Delete Photo</button>
+  </form>
+
   <img src=" <%= photos.photo %> ">
-
-
-
 
 </div>

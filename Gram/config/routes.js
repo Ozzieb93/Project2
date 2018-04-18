@@ -31,8 +31,8 @@ router.route('/photos/new')
 
 router.route('/photos/:id')
   .get(photos.show)
-  .delete(photos.delete)
-  .put(photos.update);
+  .put(photos.update)
+  .delete(photos.delete);
 
 router.route('/photos/:id/edit')
   .get(photos.edit);

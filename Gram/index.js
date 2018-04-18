@@ -8,8 +8,8 @@ const bodyParser      = require('body-parser');
 const flash           = require('flash');
 const User            = require('./models/user');
 const session         = require('express-session');
-const morgan          = require('morgan');
 const customResponses = require('./lib/customResponses');
+const methodOverride = require('method-override');
 // const {port, databaseURI} = require('./config/environment');
 
 mongoose.Promise      = require('bluebird');
@@ -19,12 +19,20 @@ app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
 mongoose.connect(databaseURI);
-app.use(express.static(`${__dirname}/public`));
-
-app.use(morgan('dev'));
 app.use(expressLayouts);
-
+app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(methodOverride((req) => {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    const method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
+
+
 
 
 app.use(session({
