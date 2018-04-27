@@ -12,7 +12,6 @@ footer {
     position: absolute;
     bottom: 0;
     /* width: 100%; */
-    padding-top: 10px;
 }
 .celebs {
   align-items: center;
@@ -26,6 +25,21 @@ footer {
   width: 169px;
   height: 169px;
 }
+
+h1 {
+  font-family: 'Oleo Script', cursive;
+}
+
+h2 {
+  font-family: 'Oleo Script', cursive;
+}
+h3 {
+  font-family: 'Oleo Script', cursive;
+}
+h4 {
+  font-family: 'Oleo Script', cursive;
+}
+
 
 /* HOME PAGE */
 
@@ -70,11 +84,22 @@ footer {
 
 footer {
   max-width: 100%;
+  font-family: 'Oleo Script', cursive;
+  font-size: 14px;
+
 }
 
 .container {
   text-align: center;
-  padding: 30px;
+  padding: 10px;
+
+}
+.right {
+  padding-right: 50px;
+}
+
+.main-footer {
+  padding-left: 50px;
 }
 
 .link-hover {
@@ -82,3 +107,25 @@ footer {
 }
 
 /* Photos Feed */
+
+
+
+/* Photos Show */
+
+.main-photo {
+
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+.picture-show{
+  width: 100%;
+  padding: 5px;
+  /* border: 1px solid red; */
+  justify-content: center;
+}
+
+.card-content-des {
+  font-size: 12px;
+}

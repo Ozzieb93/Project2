@@ -4,7 +4,7 @@
 
         <a class="right" href="/">| © 2018 Copyright |</a>
 
-
+        <div class="left main-footer">
         <% if(!locals.isLoggedIn) { %>
         <a class="link-hover" href="/">| Home |</a>
         <% } %>
@@ -29,5 +29,7 @@
         <% if(locals.isLoggedIn) { %>
           <a class="link-hover" href="/photos">| Photo Feed |</a>
         <% } %>
+        </div>
+
 
   </footer>

@@ -2,15 +2,21 @@
 
 <div class="main-photo">
 
-<a href="/photos/<%= photos._id %>/edit" class="orange-text"> <i class="material-icons" style="font-size: 10px;">edit</i>Edit Photo</a>
+<div class="picture-show">
+  <a href="/photos/<%= photos._id %>/edit" class="text-light-blue">
+    <i class="material-icons" style="font-size: 12px;">edit</i>
+  Edit <%= photos.title %></a>
+</div>
 
-
-
-<form action="/photos/<%= photos._id %>" method="post">
+<div class="picture-show">
+  <form action="/photos/<%= photos._id %>" method="post">
     <input type = "hidden" name="_method" value = "DELETE">
-    <button class="btn red">Delete Photo</button>
+    <button class="btn light-blue">Delete Photo</button>
   </form>
+</div>
+<div class="picture-show">
+    <img class="picture-show" src=" <%= photos.photo %> ">
+</div>
 
-  <img src=" <%= photos.photo %> ">
 
 </div>
