@@ -1,0 +1,16 @@
+<div class="row">
+    <h2 class="light-blue-text">Make changes to <%= photo.title %></h2>
+  <form class="col l12" action="/photos/<%= photo._id %>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+
+    <div class="input-field col l12">
+      <input type="text" name="description" id="description_feild" value="<%= photo.description%>">
+      <label for="description-field" class="light-blue-text">Edit description</label>
+    </div>
+
+    <div class="input-field col l12">
+      <button class="light-blue btn">Save changes</button>
+    </div>
+    
+  </form>
+</div>

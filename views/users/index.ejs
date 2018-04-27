@@ -1,0 +1,50 @@
+<p>This is the users page</p>
+
+<h4>Accounts to follow</h4>
+<div class="celebs">
+
+  <div class="drake col">
+    <a href="#"> <img class="img-prof-pic"src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Drake_-_More_Life_cover.jpg/220px-Drake_-_More_Life_cover.jpg" alt="">
+  </div>
+  <div class="drake col">
+    </a> <a href="#">Drake</a>
+  </div>
+
+  <div class="ronaldo col">
+    <a href="#"> <img class="img-prof-pic"src="https://pbs.twimg.com/profile_images/960787280431648768/lSc6wqfD_400x400.jpg" alt="">
+  </div>
+  <div class="ronaldo col">
+    </a> <a href="#">Ronaldo</a>
+  </div>
+
+  <div class="selena col">
+    <a href="#"> <img class="img-prof-pic"src="https://pbs.twimg.com/profile_images/922550343497478145/ti1FT2hp.jpg" alt="">
+  </div>
+  <div class="selena col">
+  </a> <a href="#">Selena</a>
+  </div>
+
+</div>
+
+<hr>
+
+<a href="#"> <img class="img-prof-pic"src="" alt=""> </a>
+
+
+<div class="user-prof">
+  <div >
+    <img class="img-prof-pic" src="<%=locals.user.photo %>" 
+  </div>
+  <div class="">
+    <p> Username: <%= locals.user.username %>  </p>
+    <p> Email: <%= locals.user.email %>  </p>
+    <a href="/users/<%= locals.user.id %>">Link</a>
+  </div>
+</div>
+
+<% users.forEach(user => { %>
+     <p> <%= user.username %>  </p>
+     <p> <%= user.email %>  </p>
+     <a href="/users/<%= user.id %>">Link</a>
+    <img class="img-prof-pic" src="<%=user.photo %>" >
+   <% }) %>
